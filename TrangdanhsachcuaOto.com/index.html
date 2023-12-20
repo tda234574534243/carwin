@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web bán ô tô </title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .khungborder {
+            opacity: 0;
+            animation: loadPage 1s forwards;
+        }
+        
+        @keyframes loadPage {
+            0% {
+                opacity: 0.5;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+
+    <div id="wrapper" >
+        <div id="header" style="background-color:  #5753555d;">
+            <a href="" class="logo">
+                <img src="banhxe.png" alt="" width="90px" style="border-radius:90px ;">
+            </a>
+            <div id="menu">
+                <div class="item">
+                    <a href="/TrangchuvaGioithieuOto.com/index.html">Trang chủ</a>
+                </div>
+                <div class="item">
+                    <a href="/TrangchuvaGioithieuOto.com/index.html">Giới thiệu</a>
+                </div>
+                <div class="item">
+                    <a href="/TrangsanphamOto.com/index.html">Sản phẩm</a>
+                </div>
+                <div class="item">
+                    <a href="/TranggopylienhecuaOto.com/index.html">Liên hệ</a>
+                </div>
+            </div>
+            <div id="actions">
+                <div class="item">
+                    <a href="/index.html"><img src="person.png" alt="" width="40px" style="border-radius: 40px;"></a>
+                </div>
+                <div class="item">
+                    <a href="/TrangdanhsachcuaOto.com/index.html"><img src="giohang4.png" alt="" width="40px" style="border-radius: 90px;"></a>
+                </div>
+            </div>
+        </div>
+        <div class="khungborder" style="position: relative; left: 30%; top: 100px;">
+            <div class="danhsach">
+                <div class="khungchuainput">
+                    <p id="tieude"><b>Sản phẩm Oto cần thêm</b> <input type="text" id="nhapvao" placeholder="Sản phẩm Oto.com"> <button style="border: none; background-color: rgb(173, 230, 89); height: 45px; border-radius: 10px;" id="button1">Thêm</button>
+                        <img src="banhxe.png" alt="" style="width: 90px; height: auto;">
+                    </p>
+    
+                    <table border="1" style="margin: 10px; width: 580px;" id="ban">
+    
+                        <tr>
+                            <th>
+                                Sản Phẩm
+                            </th>
+    
+                            <th>
+                                Số lượng
+                            </th>
+    
+                            <th>
+                                Chỉnh sửa
+                            </th>
+                            <th>
+                                Delete
+                            </th>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <a href="index.html"><button style="border: none; background-color: rgb(241, 82, 42); height: 45px; border-radius: 10px; width: 50px; margin: 10px;" id="button4">Hủy</button></a> 
+                    <a href="thembotsp.html"><button style="border: none; background-color: rgb(98, 241, 42); height: 45px; border-radius: 10px; width: 100px;" id="button5">Đặt hàng</button></a>
+                </div>
+            </div>
+        </div>
+        <script>
+    let input = document.getElementById('nhapvao');
+    let addBtn = document.getElementById('button1');
+    let table = document.getElementById('ban');
+    
+    
+    function createNewRow(product) {
+        let row = document.createElement('tr');
+        let productCell = document.createElement('td');
+        productCell.textContent = product;
+        let quantityCell = document.createElement('td');
+        quantityCell.textContent = 1; 
+        let editCell = document.createElement('td');
+        let editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.style = 'border: none; background-color: rgb(41, 171, 231); height: 45px; border-radius: 10px; width: 50px;';
+        editCell.appendChild(editBtn);
+        let deleteCell = document.createElement('td');
+        let deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.style = 'border: none; background-color: rgb(241, 82, 42); height: 45px; border-radius: 10px; width: 50px;';
+        deleteCell.appendChild(deleteBtn);
+        row.appendChild(productCell);
+        row.appendChild(quantityCell);
+        row.appendChild(editCell);
+        row.appendChild(deleteCell);
+        table.appendChild(row);
+    
+    
+        editBtn.addEventListener('click', function() {
+            let newProduct = prompt('Nhập tên sản phẩm: ');
+            if (newProduct) {
+                productCell.textContent = newProduct;
+            }
+        });
+    
+    
+        deleteBtn.addEventListener('click', function() {
+            table.removeChild(row);
+        });
+    }
+    
+    
+    addBtn.addEventListener('click', function() {
+        let product = input.value;
+        if (product) {
+            let rows = table.getElementsByTagName('tr');
+            if (rows.length < 7) { 
+                createNewRow(product);
+                input.value = ''; 
+            } else {
+                alert('Bạn không thể đặt quá 6 sản phẩm');
+            }
+        }
+    });
+    
+    window.addEventListener('beforeunload', function() {
+        let products = [];
+        let productCells = table.getElementsByTagName('td');
+        for (let i = 0; i < productCells.length; i += 4) {
+            products.push(productCells[i].textContent);
+        }
+        localStorage.setItem('products', JSON.stringify(products));
+    });
+    
+    editBtn.addEventListener('click', function() {
+        let newProduct = prompt('Đổi tên sản phẩm (Nhưng mã sản phẩm vẫn giữ nguyên)');
+        if (newProduct) {
+            productCell.textContent = newProduct;
+        }
+    });
+    
+    window.addEventListener('DOMContentLoaded', function() {
+        let products = JSON.parse(localStorage.getItem('products'));
+        if (products) {
+            products.forEach(function(product) {
+                createNewRow(product);
+            });
+        }
+    });
+    
+        </script>
+
+        <div class="header">
+            
+           </div>
+           <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="banhxe.png" alt="" width="90px" style="border-radius: 90px;">
+                </div>
+                <br>
+                <p><b>Cung cấp sản phẩm với chất lượng đến cho quý khách</b></p>
+            </div>
+            <div class="box">
+                <h3>NỘI DUNG</h3>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="/TrangchuvaGioithieuOto.com/index.html">Trang chủ</a>
+                    </div>
+                    <div class="item">
+                        <a href="/TrangsanphamOto.com/index.html">Sản phẩm</a>
+                    </div>
+                    <div class="item">
+                        <a href="/TrangchuvaGioithieuOto.com/index.html">Giới thiệu<a>
+                    </div>
+                    <div class="item">
+                        <a href="/TranggopylienhecuaOto.com/index.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>LIÊN HỆ</h3>
+                <form action="">
+                    <input type="text" placeholder="Địa chỉ email">
+                    <button>Nhận tin</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+           
+        
+
+        
+</body>
+
+</html>
