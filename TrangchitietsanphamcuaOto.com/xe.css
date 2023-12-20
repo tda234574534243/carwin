@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+#wrapper {
+    /* Kích thước màn hình là 1280 x 720 */
+    width: 100%;
+    height: 100vh;
+}
+#header {
+    width: 100%;
+    padding:0px 30px;
+    margin-top:33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+#header {
+    background-color: aqua;
+}
+
+#menu {
+    list-style:none;
+    display: flex;
+}
+
+#menu .item {
+    margin:0px 25px;
+}
+
+#menu .item a {
+    color:#ecf8f3;
+    text-decoration: none;
+    position: relative;
+}
+
+#menu .item a:hover{
+    color: rgb(144, 153, 194)
+}
+
+#actions {
+    display: flex;
+}
+
+#actions .item {
+    margin-left:22px;
+}
+
+
+
+
+
+#banner {
+    width: 100%;
+    background-image :url("banner.3.jpg");
+    height: 500px;
+    margin-top:40px;
+    display: flex;
+    padding:0px 133px;
+    position:relative;
+}
+
+#banner .box-left ,#banner .box-right {
+    width: 50%;
+}
+
+#banner  .box-left h2 {
+    font-size:48px;
+    margin-top:75px;
+    color:#fff;
+}
+
+#banner .box-left p {
+    color:#D0D0D0;
+}
+
+#banner .box-left button {
+    width: 151px;
+    height: 50px;
+    margin-top:41px;
+    background:#1d1a1a;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-weight: bold;
+    border-radius: 20px;
+    transition:0.4s;
+}
+
+#banner .box-left button:hover {
+    background:orange;
+}
+
+#banner .box-right {
+    padding-left:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .box-right img {
+    margin:0px 10px;
+    animation :animation 3s infinite linear; 
+}
+
+
+#banner .box-right img:nth-child(1)
+{
+    animation-delay: 0.5s;
+}
+#banner .box-right img:nth-child(2)
+{
+    
+    animation-delay: 1s;
+}
+
+@keyframes animation {
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+
+
+
+#footer {
+    width: 100%;
+    background:rgba(0, 0, 0, 0.534);
+    height: 322px;
+    margin-top:338px;
+    padding:0px 63px;
+    padding-top:57px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#footer .box {
+    width: 250px;
+    color:#fff;
+}
+
+#footer .box .quick-menu {
+    margin-top:40px;
+
+}
+
+
+#footer .box .quick-menu .item{
+    margin-bottom:12px;
+
+}
+#footer .box .quick-menu ,.item a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+
+#footer .box form input {
+    width: 294px;
+    height: 42px;
+    background:transparent;
+    padding-left:20px;
+    color:#fff;
+    margin-top:30px;
+    border: 1px solid black;
+}
+
+#footer .box form button {
+    background:#6b656586;
+    box-shadow: 5px 5px 4px rgba(221, 214, 214, 0.233);
+    width: 163px;
+    height: 38px;
+    margin-top:29px;
+    color:#fff;
+    border-radius: 10px;
+    border: none;
+}
+
+.header-der {
+   background-color: #4CAF50;
+   padding: 30px, 30px;
+   text-align: center;
+   font-size: 35px;
+   color: white;
+   margin-bottom: 30px;
+}
+.content-1 {
+   margin: 0 auto;
+   width: 80%;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 12px; 
+   text-align: center;
+}
+.content img {
+   width: 100%;
+   height: auto;
+}
+
+a{
+    position: relative;
+    color: white;
+}
+
+a:hover {
+    color: rgb(124, 124, 192);
+    transition: 0.2s linear;
+    position: relative;
+    font-size: large;
+}
+
+
+
+.gioithieu1 {
+    margin:auto;
+}
+
+.product-details ul li {
+    list-style: none;
+}
+
+#carContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+#buttonContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+button {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+}
+button img {
+    display: block;
+}
